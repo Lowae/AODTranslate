@@ -1,0 +1,1169 @@
+﻿<?xml version="1.0"?>
+<dlgData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <header>
+    <conditions>
+      <string>aod.quest_teronRaider_metLeader</string>
+    </conditions>
+    <links>
+      <int>38</int>
+    </links>
+    <dlg_name>NPC_Esbenus_01</dlg_name>
+    <def_link>0</def_link>
+    <def_speaker_name>Esbenus</def_speaker_name>
+    <def_portrait>Esbenus</def_portrait>
+  </header>
+  <parts>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name>Esbenus</speaker_name>
+      <npc_text>Several raiders in battered armor acknowledge your presence by getting up and loading their crossbows. A grey-haired man with a military posture emerges from one of the tents and assesses the situation. He barks some orders, swearing at his men and sending them to take positions around the camp. Within moments, some semblance of military order is created. Satisfied, the leader turns his attention to you.</npc_text>
+      <onLoadScripts>
+        <string>useCameraBookmark(Quest_Bandit_Camp_Cam_01);</string>
+        <string>aod.quest_teronRaider_metLeader = true;</string>
+        <string>addJournalChar(esbenus);</string>
+        <string>dlgTeleportToMarker(TM_Esbenus_PC_01);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"The prisoner. Hand him over."</text>
+          <def_link>1</def_link>
+          <checkOnAppear />
+          <checksOnClick>
+            <string>aod.cha &gt;= 8</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>89</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>[critical strike]"I have an important message for you!" Wait for him to come closer and attack.</text>
+          <def_link>78</def_link>
+          <checkOnAppear>aod.hasNoDagger == false</checkOnAppear>
+          <checksOnClick>
+            <string>ownsSmallDagger() &amp;&amp; aod.critical_strike &gt;= 4</string>
+            <string>ownsSmallDagger() &amp;&amp; aod.critical_strike &lt; 4</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>6</int>
+            <int>2</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"I'm here to negotiate."</text>
+          <def_link>3</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>0</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name>Esbenus</speaker_name>
+      <npc_text>[charisma success]The raider looks at you for a moment, wondering whether or not he heard you correctly. "You have a death wish? You think you can take on all of us?"</npc_text>
+      <onLoadScripts>
+        <string>aod.handHimOver = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Care to make a wager?"</text>
+          <def_link>91</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>[critical strike]"I have an important message for you!" Wait for him to come closer and attack.</text>
+          <def_link>78</def_link>
+          <checkOnAppear>aod.hasNoDagger == false</checkOnAppear>
+          <checksOnClick>
+            <string>ownsSmallDagger() &amp;&amp; aod.critical_strike &gt;= 4</string>
+            <string>ownsSmallDagger() &amp;&amp; aod.critical_strike &lt; 4</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>6</int>
+            <int>2</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"I'm here to negotiate."</text>
+          <def_link>3</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>89</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name>Esbenus</speaker_name>
+      <npc_text>The raider looks at you for a moment, wondering if he's heard you correctly. Then, he shrugs and says, "Have it your way," almost reluctantly reaching for his sword.</npc_text>
+      <onLoadScripts>
+        <string>dlgEquipItem(110, 0, 1550);</string>
+        <string>dlgEquipItem(1700, 0, 1550);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Kill ‘em all.</text>
+          <def_link>23</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>1</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name>Esbenus</speaker_name>
+      <npc_text>The raiders' leader shrugs and says, "Have it your way," almost reluctantly reaching for his sword.</npc_text>
+      <onLoadScripts>
+        <string>dlgEquipItem(110, 0, 1550);</string>
+        <string>dlgEquipItem(1700, 0, 1550);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Kill ‘em all.</text>
+          <def_link>23</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>91</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>None</portrait>
+      <speaker_name>None</speaker_name>
+      <npc_text>[failure]Your attack lacks the necessary speed and precision. The raider steps back, almost gracefully, and you hit nothing but air. Before you have a chance to recover your balance and strike again, the raider's armored fist smashes into your face, knocking you down. A heavy boot invades your personal space, bringing your breathing to a halt. You're still gasping for air when the other raiders join the fun, raining kicks and blows on you. Eventually, you pass out.
+
+*Dodging the blows increases your ability to anticipate incoming attacks, but the beating leaves a toll on your health.*
+*Your defense rating when using dodge has increased by 5 points.*
+*Your Max HP is lowered by 2 points.*</npc_text>
+      <onLoadScripts>
+        <string>equipDaggerCS();</string>
+        <string>dlgAddTextBoxMessage("Dodging the blows increases your anticipating of incoming attacks.");</string>
+        <string>dlgAddTextBoxMessage("Your Dodge training is increased by 5 points.");</string>
+        <string>dlgSetAnimation(anim_death_aimed_torso, 0.65);</string>
+        <string>dlgSetAnimation(anim_power_dagger, 0.35, 1550);</string>
+        <string>dlgSetCombatAnimation(1553);</string>
+        <string>dlgSetCombatAnimation(1554);</string>
+        <string>dlgChangeMaxHp(-2);</string>
+        <string>dlgChangeCharacterHP(-2);</string>
+        <string>dlgChangeTraining(dodge, 5);</string>
+        <string>dlgFadeShortToThisPart();</string>
+        <string>sfxPlayOnce(csMissSwingAir01);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Time to wake up.</text>
+          <def_link>4</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>2</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>None</portrait>
+      <speaker_name>None</speaker_name>
+      <npc_text>[failure]Too bad you don't have a small dagger.</npc_text>
+      <onLoadScripts>
+        <string>aod.hasNoDagger = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"The prisoner. Hand him over."</text>
+          <def_link>1</def_link>
+          <checkOnAppear>aod.handHimOver == false</checkOnAppear>
+          <checksOnClick>
+            <string>aod.cha &gt;= 8</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>89</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"I'm here to negotiate."</text>
+          <def_link>3</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>Kill ‘em all.</text>
+          <def_link>23</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>78</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name>Esbenus</speaker_name>
+      <npc_text>"Wake up," says the raider, prodding you with his boot. "You're lucky that I need someone to carry the message back. One thousand imperials. Three days."
+
+The raider lowers his voice. "Look at my men. They make a living raiding, killing, torturing... Can you imagine what they will do to the prisoner if Antidas refuses to pay? Make sure he understands it."</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeToThisPart();</string>
+        <string>aod.quest_teronRaider_raiderRansom1000 = true;</string>
+        <string>aod.quest_teron_bandit_ransom = true;</string>
+        <string>dlgSetAmbientAnimation(1553);</string>
+        <string>dlgSetAmbientAnimation(1554);</string>
+        <string>dlgSetAnimation(anim_stealth_01, 0.6, 1550);</string>
+        <string>dlgSetAnimation(anim_death_aimed_torso, 0.75);</string>
+        <string>aod.quest_teronBandit_phase3a = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Leave.</text>
+          <def_link>85</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>4</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>FIGHT</npc_text>
+      <onLoadScripts>
+        <string>addEnemyToParty(1, TeronBandits);</string>
+        <string>setRtsCam();</string>
+        <string>aod.quest_teronRaider_killedThemAll = true;</string>
+        <string>aod.quest_teronRaider_fightStarted = true;</string>
+        <string>aod.quest_teronBandit_phase3c = true;</string>
+        <string>setTravelingAllowed(false);</string>
+        <string>aod.gameplay_questRaiders_fight = true;</string>
+        <string>dlgFadeShortToThisPart();</string>
+        <string>schedule(100, 0, dlgStartCombat);</string>
+      </onLoadScripts>
+      <answers />
+      <UID>23</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>None</portrait>
+      <speaker_name>None</speaker_name>
+      <npc_text>[success]Your attack is fast and precise. The raider steps back, reaching for his sword, but it's too late and his throat has already been opened. He takes another step and collapses, his sword still in the scabbard.
+
+It all happened too fast and the raiders are still struggling to understand what just transpired. Before they reach any conclusions:</npc_text>
+      <onLoadScripts>
+        <string>equipDaggerCS();</string>
+        <string>dlgKillCharacter(1550);</string>
+        <string>dlgSetAnimation(anim_death_forward01, 0.95, 1550);</string>
+        <string>dlgSetCombatAnimation(1553);</string>
+        <string>dlgSetCombatAnimation(1554);</string>
+        <string>dlgSetCombatAnimation(1551);</string>
+        <string>dlgRotateToChar(1, 1554);</string>
+        <string>dlgSetCombatAnimation();</string>
+        <string>sfxPlayOnce(csSuccessMetal01);</string>
+        <string>dlgFadeShortToThisPart();</string>
+        <string>sfxPlayOnce(csSuccessMetal01);</string>
+        <string>dlgCsRepTrain(1);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Attack.</text>
+          <def_link>23</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>[intimidate]"There is no ransom. Walk away and live or stay and die for nothing."</text>
+          <def_link>8</def_link>
+          <checkOnAppear />
+          <checksOnClick>
+            <string>dlgGetRep(combat) &gt;= 2</string>
+            <string>dlgGetRep(bodycount) &gt;= 9</string>
+            <string>aod.str &gt;= 9 &amp;&amp; aod.dex &gt;= 7 &amp;&amp; aod.con &gt;= 8</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>14</int>
+            <int>14</int>
+            <int>14</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>[streetwise][intimidate]"Your captain has insulted House Daratan and paid for it. Fortunately for you, House Daratan doesn't hold the rest of you responsible. Hand over the prisoner and walk away with your lives."</text>
+          <def_link>7</def_link>
+          <checkOnAppear />
+          <checksOnClick>
+            <string>aod.streetwise &gt;= 3 &amp;&amp; dlgGetRep(combat) &gt;= 1</string>
+            <string>aod.streetwise &gt;= 3 &amp;&amp; dlgGetRep(bodycount) &gt;= 4</string>
+            <string>aod.streetwise &gt;= 3 &amp;&amp; aod.str &gt;= 7 &amp;&amp; aod.dex &gt;= 7 &amp;&amp; aod.con &gt;= 7</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>13</int>
+            <int>13</int>
+            <int>13</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>6</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>None</portrait>
+      <speaker_name>None</speaker_name>
+      <npc_text>[failure]Nobody says anything. For a while, the raiders are just staring at you, figuring out the odds, then one of them grips his axe and steps forward. The other men follow him.</npc_text>
+      <onLoadScripts>
+        <string>dlgRotateToChar(1551, 1);</string>
+        <string>dlgTeleportToMarker(TM_Intimidate_1553, 1553);</string>
+        <string>dlgTeleportToMarker(TM_Intimidate_1554, 1554);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Fight.</text>
+          <def_link>23</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>8</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>None</portrait>
+      <speaker_name>None</speaker_name>
+      <npc_text>[success]Nobody says anything. For a while, the raiders look at you, figuring out the odds, then one of them spits, turns around, and walks away. The other men follow him.</npc_text>
+      <onLoadScripts>
+        <string>aod.quest_teronBandit_phase4a = true;</string>
+        <string>rwd_reputation(BanditCamp_01);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Take the prisoner to Dellar.</text>
+          <def_link>109</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>14</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>None</portrait>
+      <speaker_name>Raider</speaker_name>
+      <npc_text>[failure]"Just 'cause you took one man by surprise doesn't mean you can kill the six of us," says one of the raiders reasonably. "The deal was we get a thousand imperials for the prisoner. Four shares for Esbenus, one share for every man. Tell you what, let's forget about Esbenus' share, what with him being dead and all. Pay us six hundred coins and the prisoner is all yours."</npc_text>
+      <onLoadScripts>
+        <string>dlgRotateToChar(1553, 1);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Pay him.</text>
+          <def_link>46</def_link>
+          <checkOnAppear>dlgGetMoney() &gt;= 600</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"I don't have that much at the moment."</text>
+          <def_link>45</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>7</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>None</portrait>
+      <speaker_name>Raider</speaker_name>
+      <npc_text>"Pleasure doing business. Here is the prisoner. Good as new."</npc_text>
+      <onLoadScripts>
+        <string>dlgTeleportToMarker(TM_Intimidate_1553, 1553);</string>
+        <string>dlgSetAmbientAnimation();</string>
+        <string>dlgSetAmbientAnimation(1553);</string>
+        <string>dlgChangeMoney(-600);</string>
+        <string>aod.quest_teronBandit_phase4a = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Take the prisoner to Dellar.</text>
+          <def_link>109</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>46</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>None</portrait>
+      <speaker_name>Raider</speaker_name>
+      <npc_text>"Now, that's a shame," says the raider, gripping his axe and stepping forward. "I sure hope that one day you'll see that offering people business propositions when you don't have the money to pay them might lead to all kinds of misunderstandings."</npc_text>
+      <onLoadScripts>
+        <string>dlgTeleportToMarker(TM_Intimidate_1553, 1553);</string>
+        <string>dlgTeleportToMarker(TM_Intimidate_1554, 1554);</string>
+        <string>dlgRotateToChar(1551, 1);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Fight.</text>
+          <def_link>23</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>45</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>None</portrait>
+      <speaker_name>Raider</speaker_name>
+      <npc_text>[success]"You drive a hard bargain. What's stopping us from cutting your throat before leaving?" asks one of the raiders. He tries to sound menacing, but he has no desire to fight losing battles and it shows.</npc_text>
+      <onLoadScripts>
+        <string>aod.quest_teron_bandit_no_ransom = true;</string>
+        <string>dlgRotateToChar(1553, 1);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>[persuasion][streetwise]"Because you know that if you do that, Antidas will have no choice but to send his men after you. They will hunt you down to the last men as a lesson to others. Is that what you want?"</text>
+          <def_link>47</def_link>
+          <checkOnAppear />
+          <checksOnClick>
+            <string>(aod.persuasion + aod.streetwise) &gt;= 6</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>48</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>13</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>None</portrait>
+      <speaker_name>Raider</speaker_name>
+      <npc_text>[failure]The lack of confidence in your voice boosts that of the raider and makes him think you're bluffing.
+
+"Aye," says the raider, gripping his axe and stepping forward. "That's what I want."</npc_text>
+      <onLoadScripts>
+        <string>dlgTeleportToMarker(TM_Intimidate_1553, 1553);</string>
+        <string>dlgTeleportToMarker(TM_Intimidate_1554, 1554);</string>
+        <string>dlgRotateToChar(1551, 1);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Fight.</text>
+          <def_link>23</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>47</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>None</portrait>
+      <speaker_name>Raider</speaker_name>
+      <npc_text>[success]The confidence in your voice has the desired effect.
+
+"Alright," say the raiders. "We're leaving. The prisoner is yours."</npc_text>
+      <onLoadScripts>
+        <string>aod.quest_teronBandit_phase4a = true;</string>
+        <string>rwd_civil(BanditCamp_01);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Take the prisoner to Dellar.</text>
+          <def_link>109</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>48</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name>Esbenus</speaker_name>
+      <npc_text>"We found this fine young man walking alone in these very dangerous woods. When he told us that he's a nephew of a local Lord, we decided to keep him company and do our best to ensure his safety. I'm sure that his uncle would appreciate our help and reward us generously. A thousand coins should be enough, I think."</npc_text>
+      <onLoadScripts>
+        <string>aod.quest_teronRaider_raiderRansom1000 = true;</string>
+        <string>aod.quest_teron_bandit_ransom = true;</string>
+        <string>aod.quest_teronBandit_phase3a = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"I'll pass on the message."</text>
+          <def_link>96</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>[trading success]"Lord Antidas will certainly appreciate your kindness, but a thousand coins is too much."</text>
+          <def_link>9</def_link>
+          <checkOnAppear>aod.trading &gt;= 4</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>3</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name>Esbenus</speaker_name>
+      <npc_text>"Who can put a price on the life of a kin?"</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"That depends on a kin, doesn't it? This particular kin is hardly worth more than 200 coins."</text>
+          <def_link>10</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>9</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name>Esbenus</speaker_name>
+      <npc_text>"I paid more for my dog. 900 coins, and only as a token of my respect."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"A good dog is hard to find. Useless relatives aren't. 300 coins is a good price for one."</text>
+          <def_link>11</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>10</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name>Esbenus</speaker_name>
+      <npc_text>"If he's so useless, why pay anything at all? 800 coins."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"What can I say? Lord Antidas is a kind man. 400 coins."</text>
+          <def_link>12</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>11</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name>Esbenus</speaker_name>
+      <npc_text>"Kind enough to pay 500 coins?"</npc_text>
+      <onLoadScripts>
+        <string>aod.quest_teronRaider_raiderRansom1000 = false;</string>
+        <string>aod.quest_teronRaider_raiderRansom500 = true;</string>
+        <string>aod.quest_teronBandit_phase3b = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"That should be acceptable."</text>
+          <def_link>96</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>12</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>"Got the money?" asks the raiders leader.</npc_text>
+      <onLoadScripts>
+        <string>useCameraBookmark(Quest_Bandit_Camp_Cam_01);</string>
+        <string>dlgTeleportToMarker(TM_Esbenus_PC_01);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Right here, as agreed." Give him one thousand imperials.</text>
+          <def_link>40</def_link>
+          <checkOnAppear>aod.quest_teronRaider_raiderRansom1000 &amp;&amp; dlgGetMoney() &gt;= 1000</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"Right here, as agreed." Give him five hundred imperials.</text>
+          <def_link>40</def_link>
+          <checkOnAppear>aod.quest_teronRaider_raiderRansom500 &amp;&amp; dlgGetMoney() &gt;= 500</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"I have a better offer for you. There is a mining outpost in need of raiding and pillaging. Do what you do best and Lord Antidas will gladly pay you one thousand imperials. Everything you find at the outpost is yours as well. What do you say?"</text>
+          <def_link>39</def_link>
+          <checkOnAppear>aod.quest_teronRaider_mineAttackProposal &amp;&amp; aod.quest_teronRaider_mineAttackRefused == false &amp;&amp; aod.quest_teronMine_complete == false &amp;&amp; aod.quest_teronMine_fightOutside == false</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"Working on it." Leave.</text>
+          <def_link>49</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>38</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>"My gratitude." The raiders open the cage and release the prisoner.</npc_text>
+      <onLoadScripts>
+        <string>aod.quest_teronRaider_ransomPaid = true;</string>
+        <string>if(aod.quest_teronRaider_raiderRansom1000) dlgChangeMoney(-1000);</string>
+        <string>if(aod.quest_teronRaider_raiderRansom500) dlgChangeMoney(-500);</string>
+        <string>aod.quest_teronBandit_phase4b = true;</string>
+        <string>rwd_reputation(BanditCamp_02);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Take the prisoner to Dellar.</text>
+          <def_link>109</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>40</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>The raider shakes his head. "I work for no man. Get me my money or the hostage dies."</npc_text>
+      <onLoadScripts>
+        <string>aod.quest_teronRaider_mineAttackProposal = false;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Alright, here is the money." Give him one thousand imperials.</text>
+          <def_link>40</def_link>
+          <checkOnAppear>aod.quest_teronRaider_raiderRansom1000 &amp;&amp; dlgGetMoney() &gt;= 1000</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"Alright, here is the money." Give him five hundred imperials.</text>
+          <def_link>40</def_link>
+          <checkOnAppear>aod.quest_teronRaider_raiderRansom500 &amp;&amp; dlgGetMoney() &gt;= 500</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>[persuasion][trading]"It's a good offer. Antidas won't pay the ransom. If you kill the hostage, you'll give Antidas no choice but to send his men after you. They will hunt you down to the last man as a lesson to others. Or you can do Antidas a favour and actually earn your pay."</text>
+          <def_link>50</def_link>
+          <checkOnAppear />
+          <checksOnClick>
+            <string>(aod.persuasion + aod.trading) &gt;= 7</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>51</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>[streetwise]"They used to mine gold there in the old days. Are you sure you want to pass on that?"</text>
+          <def_link>50</def_link>
+          <checkOnAppear />
+          <checksOnClick>
+            <string>aod.streetwise &gt;= 4</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>52</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>39</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>[failure]"Not interested. Go get me my money now."</npc_text>
+      <onLoadScripts>
+        <string>aod.quest_teronRaider_mineAttackRefused = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Alright, here is the money." Give him one thousand imperials.</text>
+          <def_link>40</def_link>
+          <checkOnAppear>aod.quest_teronRaider_raiderRansom1000 &amp;&amp; dlgGetMoney() &gt;= 1000</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"Alright, here is the money." Give him five hundred imperials.</text>
+          <def_link>40</def_link>
+          <checkOnAppear>aod.quest_teronRaider_raiderRansom500 &amp;&amp; dlgGetMoney() &gt;= 500</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"Working on it." Leave.</text>
+          <def_link>49</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>50</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>END - return to Teron palace</npc_text>
+      <onLoadScripts>
+        <string>dlgFinish();</string>
+        <string>dlgFadeToThisPart();</string>
+        <string>setRtsCam();</string>
+        <string>dlgSetAmbientAnimation(1550);</string>
+        <string>switchMission("Teron.mis");</string>
+      </onLoadScripts>
+      <answers />
+      <UID>85</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>END</npc_text>
+      <onLoadScripts>
+        <string>dlgFinish();</string>
+        <string>setRtsCam();</string>
+        <string>dlgFadeShortToThisPart();</string>
+      </onLoadScripts>
+      <answers />
+      <UID>49</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>END - take the prisioner to Dellar</npc_text>
+      <onLoadScripts>
+        <string>dlgFinish();</string>
+        <string>dlgFadeLongToThisPart();</string>
+        <string>aod.quest_teronRaider_reportToDellar = true;</string>
+        <string>switchMission("Teron.mis");</string>
+      </onLoadScripts>
+      <answers />
+      <UID>109</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>[success]"Alright, we'll do it. It's better than sitting here and doing nothing, and my men do need some exercise. Take the hostage, to show that we're dealing in good faith. I suppose we don't need him anymore."</npc_text>
+      <onLoadScripts>
+        <string>aod.quest_teronRaider_convincedAttack = true;</string>
+        <string>rwd_civil(BanditCamp_02);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Tell the raider where the outpost is and take the prisoner to Dellar.</text>
+          <def_link>109</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>51</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>[success]"Gold, you said? And if we do it, we can take as much as we can carry? Is that the deal? I want to hear you say it."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"All the gold you find there is yours. Plus a thousand imperials when the job is done. Do we have a deal?"</text>
+          <def_link>53</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>52</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>"Aye, we have a deal. Take the hostage, to show that we're dealing in good faith."</npc_text>
+      <onLoadScripts>
+        <string>aod.quest_teronRaider_convincedAttack = true;</string>
+        <string>rwd_civil(BanditCamp_02);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Tell the raider where the outpost is and take the prisoner to Dellar.</text>
+          <def_link>109</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>53</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>"Try to convince them," says the raider. "For his sake," he adds, nodding at the prisoner.</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>[perception success]"How does an Imperial Guard become a raider?"</text>
+          <def_link>97</def_link>
+          <checkOnAppear>aod.per &gt;= 7</checkOnAppear>
+          <checksOnClick>
+            <string>aod.cha &gt;= 7</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>98</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>Return to Dellar.</text>
+          <def_link>85</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>Leave.</text>
+          <def_link>49</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>96</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>[charisma failure]"Just because I didn't kill you doesn't mean we're friends now. Go get me my money."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>Return to Dellar.</text>
+          <def_link>85</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>Leave.</text>
+          <def_link>49</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>97</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>[charisma success]"Still easy to tell, eh? 'Once a Guard always a Guard,' my father used to say. I thought he meant something else, like some higher calling or something. Turns out he meant that once the habits are drilled into you, they stay with you until you die.
+
+"As for how I joined the other side, well, such things happen more often than you think. When a village kid signs up, he wants to be a hero. He wants to stroll into his village in shiny armor and bed every girl. Instead, he gets to do twenty-five hard years and watch his friends die over nothing. When he realizes what he's gotten himself into, he's in the wasteland. A long way from home."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"Is that what happened to you?"</text>
+          <def_link>99</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>98</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>"Nah. I did twelve years and when you do something for that long, well, it's the only life you know. I was wounded and left for dead. Raiders found me and took me in. No, not out of kindness. They need men badly, especially men with proper fighting experience. While I was recovering, I lived like a lord – food, wine, women, and a soft bed. Then they let me choose and I chose to stay.
+
+"The way I see it, you do the same shit, but the perks are much better."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"So, how did you end up here?"</text>
+          <def_link>100</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"I'll be back." Return to Dellar.</text>
+          <def_link>85</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"I'll be back." Leave.</text>
+          <def_link>49</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>99</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>"They say that raiders fuck up once. One mistake and you're dead.
+
+"The group that took me in made a mistake falling for a 'fake retreat' trick. I saw it coming and tried to warn them, but in the heat of the battle, nobody listened to me. I didn't stick around and left while I still could.
+
+"My next group fared better, until a desert storm forced us to seek shelter. We saw a mountain up ahead and pressed on, despite being blinded by the storm. When we had reached the mountain, we could see that it wasn't what we had expected. There was a temple carved into its façade with a small entrance to what appeared to be a cave. It was a strange place and now, I doubt it was a cave at all. My men tried to warn me – no, the irony isn't lost on me, but I dismissed their warnings as tribal superstitions and paid dearly for it. Only a handful of us got out alive.
+
+"And so I went from one group to another, until I had had enough of the wasteland and decided to move south in search of greener pastures."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"What happened in that cave?"</text>
+          <def_link>101</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>100</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>"It reeked of death. Skulls and bones everywhere... My men begged me to leave, told me that they'd heard stories about this place. Bad stories. Still, the storm outside was real, the stories ... well, stories. People tell them for different reasons – to amuse, to scare, or to keep other people away.
+
+"It got me thinking. The "cave" was small. The walls were rough, but seemingly man-made. You didn't have to be smart to know that there was more to it than that one small chamber. I told my men that these walls must hold great treasure – that was enough for them to abandon their caution and start looking."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>Continue.</text>
+          <def_link>102</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>101</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>"After hours of searching, we had stumbled upon a switch. It opened a hidden passage leading to another two chambers. The first one contained two strange objects – each one as tall as a man. They were indistinguishable – carbon copies of each other, just sitting there untouched. You could mistake them for some idols, if not for the metal pipes that disappeared into the floor. There were no clues as to their purpose or the reason why someone needed two of them.
+
+"The second chamber had metal pipes running along the walls and was empty, save for a single platform. It was like a metal cart with railings. I remember wondering who would possibly waste so much metal to build such a contraption. Then, Nicanor stepped onto it and the platform went down – all the way through the floor and into the very depths of the underworld, judging by the noise and red glow.
+
+"Soon, the platform returned. Without him."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>Continue.</text>
+          <def_link>103</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>102</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>"I told this story many times and each time I wonder why I didn't immediately take my men and flee. It seems so obvious now, but back then, in that chamber, we felt like we had stepped into a fairy tale. It was a tale rife with disappearing walls, strange idols, and magic carts taking only the worthy to hidden treasures beyond their wildest dreams. I sent my best men to see what was down there and bring back Nicanor. None of them returned.
+
+"When the platform came back, it was as if it had come back for us. We ran outside to clear our minds and to escape from the hidden evils of that place."</npc_text>
+      <onLoadScripts>
+        <string>aod.npc_esbenus_talkedAboutHellgate = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>[lore success]"I've heard of such platforms. It's said that there is similar device in the Commercium's building in Maadoran."</text>
+          <def_link>105</def_link>
+          <checkOnAppear>aod.lore &gt;= 2</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"Do you remember where this cave was?"</text>
+          <def_link>104</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>103</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>"Somewhere north-east. That's all I can tell you. It happened years ago and in the storm, all I could see were the looming mountains. It's not a place I'd ever return to."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"I'll be back." Return to Dellar.</text>
+          <def_link>85</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"I'll be back." Leave.</text>
+          <def_link>49</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>104</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>"I wish we had a loremaster with us... Does the place I described sound familiar to you?"</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>[lore success]"A temple carved into a mountain? It's got to be Hellgate. The stories I've heard match your own – it's a gateway to the underworld. No man has ever returned for only the dead can dwell there, or so the legend goes."</text>
+          <def_link>106</def_link>
+          <checkOnAppear>aod.lore &gt;= 3</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"Do you remember where this cave was?"</text>
+          <def_link>104</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"Never heard of it." Return to Dellar.</text>
+          <def_link>85</def_link>
+          <checkOnAppear>aod.lore &lt; 3</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"Never heard of it." Leave.</text>
+          <def_link>49</def_link>
+          <checkOnAppear>aod.lore &lt; 3</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>105</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Esbenus</portrait>
+      <speaker_name />
+      <npc_text>The raider makes a quick sign to ward off evil spirits.</npc_text>
+      <onLoadScripts>
+        <string>aod.npc_esbenus_toldHellgate = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Do you remember where this cave was?"</text>
+          <def_link>104</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"I'll be back." Return to Dellar.</text>
+          <def_link>85</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"I'll be back." Leave.</text>
+          <def_link>49</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>106</UID>
+    </dlgPart>
+  </parts>
+</dlgData>

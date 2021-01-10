@@ -1,0 +1,645 @@
+﻿<?xml version="1.0"?>
+<dlgData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <header>
+    <conditions>
+      <string>aod.vignette_grifter_lesson</string>
+    </conditions>
+    <links>
+      <int>23</int>
+    </links>
+    <dlg_name>vignette_grifter</dlg_name>
+    <def_link>28</def_link>
+    <def_speaker_name>none</def_speaker_name>
+    <def_portrait>none</def_portrait>
+  </header>
+  <parts>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Petras</speaker_name>
+      <npc_text>While Petras was an unknown and ordinary-looking man, the personas he created to pull various cons were well-known, often famous characters, usually wanted dead. He sold silver mines, treasure maps, magical rings, and resurrection potions. He foretold the future, communicated with spirits of the recently deceased, and transmuted scrap metal into gold. He even managed to sell his own description - fake as usual - to some assassin guildsmen hired to put an end to his exploits.
+
+"&lt;charname&gt;," says Petras, recognizing you. "What brings you to this quaint little town?"</npc_text>
+      <onLoadScripts>
+        <string>tbd_inn_door_01.unlock();</string>
+        <string>tbd_inn_door_02.unlock();</string>
+        <string>useCameraBookmark(vignette_grifter_01);</string>
+        <string>PG_HelpText_01.setVisible(false);</string>
+        <string>dlgTeleportTo(184, 97, 0, W);</string>
+        <string>remQuest(VignetteGrifter);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Same as you, I assume."</text>
+          <def_link>0</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>28</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>As you talk, a tired man in dusty, weathered clothes enters the inn and looks around. Several caravan crewmen carry in his chests and bags. The man carefully inspects his belongings and after a brief conversation pays the crewmen.
+
+"Hail to you, master Gracius! It's been a while. How may we serve you?" The innkeeper's attention is on Gracius, which doesn't prevent him from gesturing to his servants to pour Gracius some wine - three fingers indicate the quality - roast a fresh bird over the coals, and move the chests to the storage.
+
+"A room for me and storage for my goods. Send for a good loremaster - I'll require his services later on - and send one of your guards to make sure I'm not disturbed," replies Gracius, tossing the innkeeper a coin.</npc_text>
+      <onLoadScripts>
+        <string>useCameraBookmark(NPC_innkeeper_cam_01);</string>
+        <string>dlgCreateCharacter("Gracius", 1170, 1170, 188, 98, 0, N);</string>
+        <string>dlgFadeToThisPart();</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Continue.</text>
+          <def_link>1</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>0</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Petras</speaker_name>
+      <npc_text>"This should be interesting. I wish I didn't have to leave." Petras reaches into his bag and pulls out a bundle of clothes. "Put them on and go introduce yourself to the good merchant."</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeToThisPart();</string>
+        <string>useCameraBookmark(vignette_grifter_01);</string>
+        <string>aod.vignette_grifter_tips = false;</string>
+        <string>aod.vignette_grifter_idea = false;</string>
+        <string>dlgAddItemlist(vignette_grifter);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Alright." Put on the clothes.</text>
+          <def_link>5</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"I've never been a loremaster before. Any tips?"</text>
+          <def_link>2</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"I'm not sure it's a good idea."</text>
+          <def_link>3</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>1</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Petras</speaker_name>
+      <npc_text>"Loremasters are a pretentious sort. Just pretend that you know everything better than him, dismiss his attempts to argue with you, and throw in some names and obscure references."</npc_text>
+      <onLoadScripts>
+        <string>aod.vignette_grifter_tips = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Alright." Put on the clothes.</text>
+          <def_link>5</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"I'm not sure it's a good idea."</text>
+          <def_link>3</def_link>
+          <checkOnAppear>aod.vignette_grifter_idea == false</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>2</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Petras</speaker_name>
+      <npc_text>"Why not? Do you have a better scheme at the moment? No. Then go in, pretend to be the loremaster he sent for - since he was stupid enough to announce it so loudly - and take whatever artefact he's got. I'm sure it's worth at least a few hundred coins. Not bad for ten minutes of work, no?"</npc_text>
+      <onLoadScripts>
+        <string>aod.vignette_grifter_idea = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Alright." Put on the clothes.</text>
+          <def_link>5</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"I've never *been* a loremaster before. Any tips?"</text>
+          <def_link>2</def_link>
+          <checkOnAppear>aod.vignette_grifter_tips == false</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>3</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>"Are you..."</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeToThisPart();</string>
+        <string>dlgTeleportTo(181, 96, 1, S);</string>
+        <string>dlgEquipItem(513);</string>
+        <string>dlgTeleportTo(181, 95, 1, N, 1170);</string>
+        <string>useCameraBookmark(vignette_room_02);</string>
+        <string>addQuest(Map);</string>
+        <string>aod.quest_map_phase1 = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>[impersonate]"I am the loremaster you've sent for. What do you want me to look at?"</text>
+          <def_link>6</def_link>
+          <checkOnAppear />
+          <checksOnClick>
+            <string>aod.disguise &gt;= 3</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>9</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>5</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>[failure]The trader looks at you suspiciously. You aren't sure what you did wrong, but your loremaster persona has clearly failed to meet his expectations.
+
+"I have a gift for Lord Antidas, and I wish to have it appraised, to be certain that the gift is worthy of my lord and benefactor." He hands you a carefully wrapped scroll.</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"It's a simple map. Why do you think it has any value at all?"</text>
+          <def_link>7</def_link>
+          <checkOnAppear>aod.lore &lt; 3</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>[lore success]"The seal of Thor-Agoth?"</text>
+          <def_link>8</def_link>
+          <checkOnAppear>aod.lore &gt;= 3</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>6</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>"I think I'd rather consult with someone else. Thank you for your time." The trader takes the map back and shows you the door.</npc_text>
+      <onLoadScripts>
+        <string>aod.vignette_grifter_failure = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Leave.</text>
+          <def_link>20</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>7</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>The trader's suspicions disappear. "So I was told," he says pompously.</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"Yet you wouldn't have called for a loremaster if you didn't want to be absolutely sure."</text>
+          <def_link>13</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>[streetwise]"Thor-Agoth seals are common as dirt. Are you out of your mind? It's not a gift, it's an insult!"</text>
+          <def_link>14</def_link>
+          <checkOnAppear />
+          <checksOnClick>
+            <string>aod.streetwise &gt;= 3</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>15</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>8</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>[success]"I have a gift for Lord Antidas, and I wish to have it appraised, to be certain that the gift is worthy of my lord and benefactor." He hands you a carefully wrapped scroll.</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"It's a simple map. Why do you think it has any value at all?"</text>
+          <def_link>10</def_link>
+          <checkOnAppear>aod.lore &lt; 3</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>[lore success]"The seal of Thor-Agoth?"</text>
+          <def_link>12</def_link>
+          <checkOnAppear>aod.lore &gt;= 3</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>9</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>He looks at you suspiciously. "Surely you've noticed the seal?"</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"Maybe this particular seal is a rarity in your village, but here..."</text>
+          <def_link>11</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>10</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>"I was assured that it's the symbol of Thor-Agoth!"</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"Yet you wouldn't have called for a loremaster if you didn't want to be absolutely sure."</text>
+          <def_link>13</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>[streetwise]"Thor-Agoth seals are common as dirt. Are you out of your mind? It's not a gift, it's an insult!"</text>
+          <def_link>14</def_link>
+          <checkOnAppear />
+          <checksOnClick>
+            <string>aod.streetwise &gt;= 3</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>15</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>11</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>"So I was told," he says pompously.</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"Yet you wouldn't have called for a loremaster if you didn't want to be absolutely sure."</text>
+          <def_link>13</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>[streetwise]"Thor-Agoth seals are common as dirt. Are you out of your mind? It's not a gift, it's an insult!"</text>
+          <def_link>14</def_link>
+          <checkOnAppear />
+          <checksOnClick>
+            <string>aod.streetwise &gt;= 3</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>15</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>12</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>"Quite so," the trader nods. "I want you to study the map properly. Your expenses will be covered after a detailed report is presented. I trust the innkeeper knows where to find you."</npc_text>
+      <onLoadScripts>
+        <string>aod.vignette_grifter_success = true;</string>
+        <string>dlgAddItem(2100, 1);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Of course, master." Take the map and leave.</text>
+          <def_link>20</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>13</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>[failure]"I think I'd rather consult with someone else. Thank you for your time." The trader takes the map back and shows you the door.</npc_text>
+      <onLoadScripts>
+        <string>aod.vignette_grifter_failure = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Leave.</text>
+          <def_link>20</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>14</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>[success]"What should I do?"</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"Hmm... Now that I think about it I recall that Lord Antidas mentioned several times that he wished he had a map of the Empire etched in silver. That would be a worthy gift indeed." Look meaningfully at the trader.</text>
+          <def_link>16</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>15</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>The trader reaches for his purse. "Friend! Benefactor! Please accept this humble sum and do what you can to turn this accursed map into a worthy gift."</npc_text>
+      <onLoadScripts>
+        <string>aod.vignette_grifter_success = true;</string>
+        <string>dlgAddItem(2100, 1);</string>
+        <string>dlgChangeMoney(50);</string>
+        <string>rwd_civil(vignetteGrifter_01);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"The map will be ready tomorrow." Leave.</text>
+          <def_link>20</def_link>
+          <checkOnAppear>aod.trading &lt; 3</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>[trading][charisma]Weigh the purse in your hand. "Humble sums buy humble gifts, trader. You're buying a favor of a Lord, not fish at the market."</text>
+          <def_link>17</def_link>
+          <checkOnAppear>aod.trading &gt;= 2</checkOnAppear>
+          <checksOnClick>
+            <string>aod.trading &gt;= 3 &amp;&amp; aod.cha &gt;= 6</string>
+            <string>aod.trading &gt;= 2 &amp;&amp; aod.cha &gt;= 8</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>18</int>
+            <int>18</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>16</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>[failure]"Your advice is appreciated, but I believe I paid enough for an appropriate gift."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"Very well. The map will be ready tomorrow." Leave.</text>
+          <def_link>20</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>17</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>[success]The trader sighs and gives you a small bag. "Gemstones from Ashkaan. The gift better be spectacular."</npc_text>
+      <onLoadScripts>
+        <string>dlgAddItem(2004, 2);</string>
+        <string>dlgAddItem(2003, 1);</string>
+        <string>rwd_civil(vignetteGrifter_01);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"It will exceed your wildest expectations." Leave.</text>
+          <def_link>20</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>18</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Petras</speaker_name>
+      <npc_text>"How did it go?"</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeToThisPart();</string>
+        <string>dlgTeleportTo(184, 97, 0, W);</string>
+        <string>dlgDeleteCharacter(1170);</string>
+        <string>useCameraBookmark(vignette_grifter_01);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Surprisingly easy. The trader thinks that this map is valuable enough to be presented to Lord Antidas."</text>
+          <def_link>21</def_link>
+          <checkOnAppear>aod.vignette_grifter_success</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"Something went wrong. The trader got suspicious and I had to leave. He has some kind of map..."</text>
+          <def_link>22</def_link>
+          <checkOnAppear>aod.vignette_grifter_failure</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>20</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Petras</speaker_name>
+      <npc_text>"Good. Talk to Feng, the local loremaster. If the map has any value, he'll take it off your hands.
+
+"I must leave now before the town realizes that the healing elixirs I sold here are nothing but water mixed with cheap dye in fancy bottles. I'm sure that you can survive on your own now, but if you need me, look me up in Ganezzar. I've heard that lord Meru had a religious experience and is talking about gods non-stop. It's a once in a lifetime opportunity."</npc_text>
+      <onLoadScripts>
+        <string>rwd_quest(vignetteGrifter);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Good luck."</text>
+          <def_link>24</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>21</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>END - vignette</npc_text>
+      <onLoadScripts>
+        <string>BlackSplash.command = "";</string>
+        <string>BlackOut.command = "dlgDeleteCharacter(1160); dlgFinish(); setRtsCam(); startBlackSplash();";</string>
+        <string>startBlackOut();</string>
+        <string>aod.global_teron_vignette = false;</string>
+        <string>setAchievement("ACH_GRIFTER");</string>
+      </onLoadScripts>
+      <answers />
+      <UID>24</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Petras</speaker_name>
+      <npc_text>"Watch and learn, &lt;charname&gt;."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>Wait.</text>
+          <def_link>23</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>22</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Petras</speaker_name>
+      <npc_text>Petras leaves the inn and a few minutes later, an old loremaster walks in, leaning heavily on his gnarled cane, and makes his way through the crowd, impatiently pushing people out of his way. He hobbles upstairs and stays there for a very long time.
+
+Finally, he comes back and hobbles toward you. "Blessed are the learned." He says in a chanting voice. "And blessed are the fools," he continues in his normal voice. "Here is your map. I'm keeping the rest. I'm surprised you couldn't get anything out of him. He was so eager to trust someone.
+
+"Talk to Feng, the local loremaster. If the map has any value, he'll take it off your hands.
+
+"I must leave now before the town realizes that the healing elixirs I sold here are nothing but water mixed with cheap dye in fancy bottles. I'm sure that you can survive on your own now, but if you need me, look me up in Ganezzar. I've heard that lord Meru had a religious experience and is talking about gods non-stop. It's a once in a lifetime opportunity."</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeToThisPart();</string>
+        <string>dlgDeleteCharacter(1160);</string>
+        <string>dlgCreateCharacter("Petras", 1161, 1161, 183, 97, 0, E);</string>
+        <string>rwd_quest(vignetteGrifter);</string>
+        <string>dlgAddItem(2100, 1);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Good luck."</text>
+          <def_link>26</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"Before you leave, any other tips on doing business here?"</text>
+          <def_link>27</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>23</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>END - vignette - Petras disguise</npc_text>
+      <onLoadScripts>
+        <string>BlackSplash.command = "";</string>
+        <string>BlackOut.command = "dlgDeleteCharacter(1161); dlgFinish(); setRtsCam(); startBlackSplash();";</string>
+        <string>startBlackOut();</string>
+        <string>aod.global_teron_vignette = false;</string>
+        <string>setAchievement("ACH_GRIFTER");</string>
+      </onLoadScripts>
+      <answers />
+      <UID>26</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Petras</speaker_name>
+      <npc_text>"Linos can definitely put your talents to good use. He runs the local chapter of the Commercium. That shrivelled old codger is nobody's fool, so be careful around him. If you can get on the good side of Antidas - well, House Daratan is a joke, but he still holds some power here. If you prefer to work with honest people, pay your respects to the Forty Thieves."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"Thanks for the tips and good luck."</text>
+          <def_link>26</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>27</UID>
+    </dlgPart>
+  </parts>
+</dlgData>

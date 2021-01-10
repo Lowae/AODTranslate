@@ -1,0 +1,721 @@
+﻿<?xml version="1.0"?>
+<dlgData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <header>
+    <conditions>
+      <string>aod.vignette_knight_head_none</string>
+      <string>aod.vignette_knight_head_fake</string>
+      <string>aod.vignette_knight_head_real</string>
+    </conditions>
+    <links>
+      <int>21</int>
+      <int>22</int>
+      <int>23</int>
+    </links>
+    <dlg_name>vignette_knight</dlg_name>
+    <def_link>1</def_link>
+    <def_speaker_name>none</def_speaker_name>
+    <def_portrait>none</def_portrait>
+  </header>
+  <parts>
+    <dlgPart>
+      <portrait>Antidas</portrait>
+      <speaker_name>Antidas</speaker_name>
+      <npc_text>Lord Antidas is the current and most likely the last Lord of House Daratan. It was prophesied that he would be the leader to restore Daratan to its original glory, and unwavering in his faith in the prophecy, Antidas undertook many daring attacks against Daratan's enemies. Unfortunately for both Antidas and his House, the prophecy failed to live up to its end of the bargain with disastrous consequences for House Daratan. With the loss of a fort and two entire legions, Antidas' domain was reduced to a crumbling town and a small regiment of guards, while the prospects of glory slowly faded away.
+
+"Hail to you, &lt;charname&gt;. Have you heard of the murder yet? Traders are slaughtering each other over a handful of coins they can make in this town. Usually, I don't concern myself with such trivial matters, but the man who was killed was bringing me a tribute - an artefact to buy my protection with. It must be recovered."</npc_text>
+      <onLoadScripts>
+        <string>aod.vignette_knight_looking = false;</string>
+        <string>aod.vignette_knight_armor = false;</string>
+        <string>useCameraBookmark(NPC_Antidas_Cam_01);</string>
+        <string>dlgTeleportTo(170, 229, 0, N);</string>
+        <string>dlgRotateToChar(1060);</string>
+        <string>setPassability(155, 218, 0, 1);</string>
+        <string>setPassability(155, 219, 0, 1);</string>
+        <string>setPassability(155, 222, 0, 1);</string>
+        <string>setPassability(155, 223, 0, 1);</string>
+        <string>PG_HelpText_01.setVisible(false);</string>
+        <string>addJournalChar(antidas);</string>
+        <string>remQuest(VignettePraetor);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"At once, my Lord."</text>
+          <def_link>6</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"What am I looking for?"</text>
+          <def_link>2</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>[etiquette success]"I'll remind the merchants guild who runs this town, my Lord, but I'm afraid that I don't have armor that fits such a mission."</text>
+          <def_link>3</def_link>
+          <checkOnAppear>aod.etiquette &gt;= 2</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>1</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Antidas</portrait>
+      <speaker_name>Antidas</speaker_name>
+      <npc_text>"It's a map. The trader sent me a letter requesting an audience. The letter mentioned an ancient map that, as he put it, would interest me greatly."</npc_text>
+      <onLoadScripts>
+        <string>aod.vignette_knight_looking = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"At once, my Lord."</text>
+          <def_link>6</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>[etiquette success]"I'll remind the merchants guild who runs this town, my Lord, but I'm afraid that I don't have armor that fits such a mission."</text>
+          <def_link>3</def_link>
+          <checkOnAppear>aod.etiquette &gt;= 2 &amp;&amp; aod.vignette_knight_armor == false</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>2</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Antidas</portrait>
+      <speaker_name>Antidas</speaker_name>
+      <npc_text>"Talk to Dellar."</npc_text>
+      <onLoadScripts>
+        <string>aod.vignette_knight_armor = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"At once, my Lord."</text>
+          <def_link>6</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"What am I looking for?"</text>
+          <def_link>2</def_link>
+          <checkOnAppear>aod.vignette_knight_looking == false</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>3</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>You enter the Commercium's richly decorated halls. Everywhere you look, you see signs of wealth, from the rich tapestries lining the walls to the gilded vases and intricately carved stonework. If money is power, then the interiors are designed to convey the message that the Commercium is a very powerful guild.</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeToThisPart();</string>
+        <string>dlgTeleportTo(137, 108, 0, N);</string>
+        <string>if(aod.vignette_knight_armor) {dlgAddItem(415, 1); dlgEquipItem(415);}</string>
+        <string>useCameraBookmark(Location_MG_Cam_01);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Go to Linos' office.</text>
+          <def_link>7</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>6</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Linos</portrait>
+      <speaker_name>Linos</speaker_name>
+      <npc_text>Linos the Skull owed his nickname to his appearance, and his appearance to the decades of service to the merchants guild. It was that service that changed an enthusiastic youth with blue eyes and wavy auburn hair into a dispassionate old man with a bald head and cold, almost colorless eyes sitting deep within the dark sockets. Business to Linos was a board game. He moved pieces and executed strategies, without taking any "human element" into consideration. A good opportunity shouldn't be missed solely because some people were standing in the way.
+
+Linos' lips twist into something resembling a welcoming smile. "To what do I owe this unexpected pleasure?"</npc_text>
+      <onLoadScripts>
+        <string>dlgTeleportTo(134, 118, 0, N);</string>
+        <string>useCameraBookmark(NPC_Linos_cam_01);</string>
+        <string>dlgFadeToThisPart();</string>
+        <string>addJournalChar(linos);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Unexpected? You should have expected this *pleasure* when you decided to kill that trader. As it turns out he was bringing a gift for the old man and..."</text>
+          <def_link>8</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>7</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Linos</portrait>
+      <speaker_name>Linos</speaker_name>
+      <npc_text>"...and he wants it back. I understand. I'll have it delivered to Lord Antidas within the hour. Anything else I can help you with?"</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"Lord Antidas wants to make it a memorable experience. A lesson must be taught."</text>
+          <def_link>9</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>8</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Linos</portrait>
+      <speaker_name>Linos</speaker_name>
+      <npc_text>Linos' lips twist again. "This too will be arranged. A gift and a head of one of my not-so-lucky associates will be delivered to your master."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"That will be acceptable."</text>
+          <def_link>10</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>[intelligence success][streetwise]"I don't want the head of some beggar dressed in the merchant's robes for the occasion. Bring me the one who arranged the hit."</text>
+          <def_link>18</def_link>
+          <checkOnAppear>aod.int &gt;= 7</checkOnAppear>
+          <checksOnClick>
+            <string>aod.streetwise &gt;= 2</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>11</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>9</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Linos</portrait>
+      <speaker_name>Linos</speaker_name>
+      <npc_text>"Please accept this small gift for being so... understanding."</npc_text>
+      <onLoadScripts>
+        <string>dlgChangeMoney(150);</string>
+        <string>dlgAddTextBoxMessage("You gain 150 imperials");</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"What are friends for, Linos?"</text>
+          <def_link>22</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>10</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Linos</portrait>
+      <speaker_name>Linos</speaker_name>
+      <npc_text>[failure]"Trust me, &lt;charname&gt;, I wouldn't even think of playing games with House Daratan."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"Very well."</text>
+          <def_link>10</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>18</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Linos</portrait>
+      <speaker_name>Linos</speaker_name>
+      <npc_text>[success]Linos locks his eyes with yours, trying to read your determination, then gestures to the unseen guards.</npc_text>
+      <onLoadScripts>
+        <string>rwd_civil(vignetteKnight_01);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Wait.</text>
+          <def_link>32</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>11</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>A minute later, another merchant enters the room.
+
+"Zenon, I'd like you to meet &lt;charname&gt;, a praetor of House Daratan. &lt;He/She&gt; has something &lt;he/she&gt; wishes to discuss with you. In private, I hope." Linos leaves the room.</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeToThisPart();</string>
+        <string>dlgTeleportTo(127, 119, 0, S, 1080);</string>
+        <string>dlgTeleportTo(134, 119, 0, S, 1090);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Tell me, Zenon, do you know who owns this town?"</text>
+          <def_link>27</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>32</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Zenon</speaker_name>
+      <npc_text>"Lord Antidas."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"Then what makes you think that you can place hits on Lord Antidas' guests seeking his protection? Who are you to deny his protection to them?"</text>
+          <def_link>28</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>27</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Zenon</speaker_name>
+      <npc_text>"But Master Linos..."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"We can tolerate certain... indiscretions from a master, but not from a lowly servant. Surely you realize that?"</text>
+          <def_link>29</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>28</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Zenon</speaker_name>
+      <npc_text>Zenon's face turns completely white.</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>Cut his throat.</text>
+          <def_link>15</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"Your life is in my hands now. Assuming it has any value to you, what would you be willing to offer me for it?"</text>
+          <def_link>13</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>29</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>With a practiced motion, you draw the dagger across his throat and step back. Blood gushes out and Zenon falls to his knees, still struggling with the reality that he has seconds to live.</npc_text>
+      <onLoadScripts>
+        <string>delCharTag(TeronKeyNPC, 1090);</string>
+        <string>dlgEquipItem(102);</string>
+        <string>dlgChangeRep(bodycount, 1);</string>
+        <string>aod.npc_zenon_dead = true;</string>
+        <string>dlgSetAnimation(anim_death_aimed_head, 0.5, 1090);</string>
+        <string>dlgSetCombatAnimation();</string>
+        <string>dlgFadeShortToThisPart();</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Wait.</text>
+          <def_link>31</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>15</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>Two servants carrying a new carpet enter and bow, waiting patiently at the door. Their faces show no trace of emotion. Business as usual at the Commercium?</npc_text>
+      <onLoadScripts>
+        <string>dlgTeleportTo(132, 119, 0, E, 1580);</string>
+        <string>dlgTeleportTo(132, 118, 0, E, 1590);</string>
+        <string>dlgSetAmbientAnimation();</string>
+        <string>dlgRotateToChar(1580);</string>
+        <string>useCameraBookmark(vignette_knight_cam_01);</string>
+        <string>dlgSetAnimation(anim_death_aimed_head, 0.99, 1090);</string>
+        <string>dlgFadeToThisPart();</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Deliver his head to Lord Antidas." Leave.</text>
+          <def_link>23</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>31</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Zenon</speaker_name>
+      <npc_text>"What can I offer you, lord?"</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"300 imperials."</text>
+          <def_link>16</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"Surprise me."</text>
+          <def_link>14</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"One day I will ask you to remember this moment." Let him go and leave.</text>
+          <def_link>21</def_link>
+          <checkOnAppear>aod.coudlntaddanything</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>13</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Zenon</speaker_name>
+      <npc_text>"Take this vial. It's one of the remnants of the old days. It's called Nero's Stimulant. It will speed up your reflexes and reaction in combat for a short time. For a warrior, it's a priceless gift."</npc_text>
+      <onLoadScripts>
+        <string>dlgAddItemlist(vignette_praetor_NS);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Very well. Watch where you step next time, Zenon." Leave.</text>
+          <def_link>21</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>14</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Zenon</speaker_name>
+      <npc_text>With a sigh of relief and shaking hands, Zenon pulls out his coin purse, tries to count out the money, but fails, and then just hands it to you.
+
+*You gain 312 imperials*</npc_text>
+      <onLoadScripts>
+        <string>dlgAddTextBoxMessage("You gain 312 imperials");</string>
+        <string>dlgChangeMoney(312);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Watch where you step next time, Zenon." Leave.</text>
+          <def_link>21</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>16</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Antidas</portrait>
+      <speaker_name>Antidas</speaker_name>
+      <npc_text>"Well done! Linos delivered the map himself. Along with a generous gift. Looks like the message hit home."</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeToThisPart();</string>
+        <string>useCameraBookmark(NPC_Antidas_Cam_01);</string>
+        <string>dlgTeleportTo(170, 229, 0, N);</string>
+        <string>rwd_quest(vignettePraetor);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Thank you, my Lord."</text>
+          <def_link>26</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>21</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Antidas</portrait>
+      <speaker_name>Antidas</speaker_name>
+      <npc_text>"Well done! Linos delivered the map himself. Along with a generous gift and some poor bastard's head. Looks like the message hit home. You're an efficient &lt;man/woman&gt;, &lt;charname&gt;. With the right guidance you will go far.
+
+"Not many people understand that lessons that aren't taught in blood are soon forgotten." He takes off his ring and hands it to you.</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeToThisPart();</string>
+        <string>useCameraBookmark(NPC_Antidas_Cam_01);</string>
+        <string>dlgTeleportTo(170, 229, 0, N);</string>
+        <string>rwd_quest(vignettePraetor);</string>
+        <string>dlgAddItem(1310, 1);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Thank you, my Lord."</text>
+          <def_link>26</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>22</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Antidas</portrait>
+      <speaker_name>Antidas</speaker_name>
+      <npc_text>"Well done! Linos delivered the map himself. Along with a generous gift and Zenon's head. Looks like the message hit home. You're an efficient &lt;man/woman&gt;, &lt;charname&gt;. Ruthless too. With the right guidance, you can go far.
+
+"You have a rare ability to do what needs to be done and you understand that lessons that aren't taught in blood are soon forgotten." He reaches inside his desk, pulls out a scroll, and hands it to you.
+
+"Have you ever heard of "Flos Duellatorum"? Flower of Battle," he recites from memory, "for the men at arms during wars, riots, and duels." It's an excellent treatise on fighting techniques, written when combat was considered the ultimate form of art. Unfortunately, I only have one chapter – the art of dagger fighting. So much has been lost... I've made several copies, this one is yours."</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeToThisPart();</string>
+        <string>useCameraBookmark(NPC_Antidas_Cam_01);</string>
+        <string>dlgTeleportTo(170, 229, 0, N);</string>
+        <string>rwd_quest(vignettePraetor);</string>
+        <string>dlgDeleteCharacter(1090);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Read the scroll.</text>
+          <def_link>24</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>23</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Antidas</portrait>
+      <speaker_name>Antidas</speaker_name>
+      <npc_text>"...against a sword thrust at your face, lift your elbow, striking the point to your left with your dagger blade. Stepping in with your right foot to close distance, catch hold of your enemy's sword arm. This prevents the swordsman from escaping to a safer distance. Once in this position of advantage, you can dispatch your foe with a dagger thrust."
+
+Sounds useful.</npc_text>
+      <onLoadScripts>
+        <string>if(aod.dagger &gt;= 2) {dlgChangeTraining(dagger, 5); dlgAddTextBoxMessage("Your attack rating when using daggers has increased by 5 points.");}</string>
+        <string>if(aod.dagger &lt; 2) {dlgChangeSkill(dagger, 1); dlgAddTextBoxMessage("Your Dagger skill has increased.");}</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Where can I find the other chapters?</text>
+          <def_link>25</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>24</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Antidas</portrait>
+      <speaker_name>Antidas</speaker_name>
+      <npc_text>"You can't. Do you know how old this treatise is? Centuries! We're lucky that few pages have survived. Still, should you be fortunate enough to find another, make sure to bring it to me."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"Will do, my Lord."</text>
+          <def_link>26</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>25</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Antidas</portrait>
+      <speaker_name>Antidas</speaker_name>
+      <npc_text>"Do you believe in destiny, &lt;charname&gt;?" Before you have a chance to answer, Antidas continues. "I've spent more than a decade trying to find the temple and fulfill the prophecy. I've wasted a fortune and lost more men than I'd dare to admit, and just when I've decided to give up, another map shows up. Coincidence? I don't believe in them.
+
+"It is said that every man is given a chance to change his fate, to ascend to greatness and immortality, to rise above the ordinary and serve a cause greater than self-interest. Fate guided you to the map and it will guide you to the temple."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"The temple? The prophecy? Another map?"</text>
+          <def_link>34</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>26</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Antidas</portrait>
+      <speaker_name>Antidas</speaker_name>
+      <npc_text>"All in due time. I want to see how you handle a more challenging task. Talk to Dellar."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"I will, my Lord." Leave.</text>
+          <def_link>33</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>34</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Dellar</portrait>
+      <speaker_name>Dellar</speaker_name>
+      <npc_text>"Just the &lt;man/woman&gt; I'm looking for," says Dellar in a tone suggesting that you're the first person he ran into. "Did Cassius arrive yet?"</npc_text>
+      <onLoadScripts>
+        <string>dlgTeleportTo(170, 187, 0, N);</string>
+        <string>dlgFadeToThisPart();</string>
+        <string>dlgSetZoom(8);</string>
+        <string>useCameraBookmark(NPC_Dellar_Cam_01);</string>
+        <string>addQuest(HD0);</string>
+        <string>aod.jnl_hd0 = 1;</string>
+        <string>aod.quest_hd2_talkToFeng = true;</string>
+        <string>addJournalChar(dellar);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Cassius?"</text>
+          <def_link>39</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>33</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>END - vignette</npc_text>
+      <onLoadScripts>
+        <string>dlgFinish();</string>
+        <string>setRtsCam();</string>
+        <string>dlgTeleportTo(167, 163, 0, S);</string>
+        <string>dlgFadeToThisPart();</string>
+        <string>dlgTeleportTo(134, 119, 0, S, 1080);</string>
+        <string>dlgTeleportTo(125, 119, 0, S, 1090);</string>
+        <string>dlgDeleteDeadCharacters();</string>
+        <string>dlgTeleportTo(152, 117, 0, E, 1580);</string>
+        <string>dlgTeleportTo(145, 119, 0, N, 1590);</string>
+        <string>aod.global_teron_vignette = false;</string>
+        <string>setTravelingAllowed(true);</string>
+        <string>setAchievement("ACH_PRAETOR");</string>
+      </onLoadScripts>
+      <answers />
+      <UID>35</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>END - vignette - go to Feng</npc_text>
+      <onLoadScripts>
+        <string>dlgFinish();</string>
+        <string>setRtsCam();</string>
+        <string>dlgTeleportTo(159, 71, 0, N);</string>
+        <string>dlgFadeToThisPart();</string>
+        <string>dlgTeleportTo(134, 119, 0, S, 1080);</string>
+        <string>dlgTeleportTo(125, 119, 0, S, 1090);</string>
+        <string>dlgDeleteDeadCharacters();</string>
+        <string>dlgTeleportTo(152, 117, 0, E, 1580);</string>
+        <string>dlgTeleportTo(145, 119, 0, N, 1590);</string>
+        <string>aod.global_teron_vignette = false;</string>
+        <string>setTravelingAllowed(true);</string>
+        <string>setAchievement("ACH_PRAETOR");</string>
+      </onLoadScripts>
+      <answers />
+      <UID>40</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Dellar</portrait>
+      <speaker_name>Dellar</speaker_name>
+      <npc_text>"The new loremaster. I've finally convinced the old man to get rid of that weasel Feng and get someone better. Cassius was highly recommended.
+
+"So, tell Feng that his services are no longer required, and if you see Cassius at the inn bring him here."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>Pay Feng a visit.</text>
+          <def_link>40</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>Leave.</text>
+          <def_link>35</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>39</UID>
+    </dlgPart>
+  </parts>
+</dlgData>

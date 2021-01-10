@@ -1,0 +1,1134 @@
+﻿<?xml version="1.0"?>
+<dlgData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <header>
+    <conditions>
+      <string>aod.vignette_mercenary_MG</string>
+      <string>aod.vignette_merc_innkeeper</string>
+      <string>aod.vignette_mercenary_fightThugs</string>
+      <string>aod.vignette_mercenary_MG</string>
+    </conditions>
+    <links>
+      <int>51</int>
+      <int>33</int>
+      <int>34</int>
+      <int>2</int>
+    </links>
+    <dlg_name>vignette_mercenary</dlg_name>
+    <def_link>53</def_link>
+    <def_speaker_name>none</def_speaker_name>
+    <def_portrait>none</def_portrait>
+  </header>
+  <parts>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Innkeeper</speaker_name>
+      <npc_text>"Easy on the wine, &lt;charname&gt;. You're working tonight, remember?"</npc_text>
+      <onLoadScripts>
+        <string>assignDialogue(teron_innkeeper, 1180);</string>
+        <string>dlgteleportto(188, 98, 0, N);</string>
+        <string>tbd_inn_door_01.unlock();</string>
+        <string>tbd_inn_door_02.unlock();</string>
+        <string>useCameraBookmark(NPC_innkeeper_cam_01);</string>
+        <string>dlgRotateToChar(1180);</string>
+        <string>PG_HelpText_01.setVisible(false);</string>
+        <string>aod.jnl_vignette_merc = 1;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Don't worry about it."</text>
+          <def_link>0</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>53</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>As you talk, a tired man in dusty, weathered clothes enters the inn and looks around. Several caravan crewmen carry his chests and bags inside. The man carefully inspects his belongings and after a brief conversation, pays the crewmen.
+
+"Hail to you, master Gracius! It's been a while. How may we serve you?" The innkeeper's attention is on Gracius, which doesn't prevent him from gesturing to his servants to pour Gracius some wine - three fingers indicate the quality of the wine, roast a fresh bird over the coals, and move the chests to the storage.
+
+"A room for me and storage for my goods. Find me a good loremaster and send one of your guards to make sure that I'm not disturbed," says Gracius, tossing the innkeeper a coin.</npc_text>
+      <onLoadScripts>
+        <string>dlgCreateCharacter("Gracius", 1170, 1170, 188, 98, 0, N);</string>
+        <string>dlgFadeToThisPart();</string>
+        <string>dlgteleportto(190, 98, 0, W);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Continue.</text>
+          <def_link>1</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>0</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Innkeeper</speaker_name>
+      <npc_text>"Did you hear that, &lt;charname&gt;? Our guest requires the pleasure of your company, so go clean yourself and do something useful for a change."</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeToThisPart();</string>
+        <string>dlgTeleportTo(181, 95, 1, N, 1170);</string>
+        <string>dlgteleportto(188, 98, 0, N);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"I need better gear."</text>
+          <def_link>49</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"On my way." Go to the trader's room.</text>
+          <def_link>2</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>1</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Innkeeper</speaker_name>
+      <npc_text>"Now you're telling me? Go to the trading plaza, but don't waste any time. The client is waiting."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>Go to the Merchants Guild.</text>
+          <def_link>50</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>49</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>END - go to MG</npc_text>
+      <onLoadScripts>
+        <string>setGroupPassability(126, 109, 130, 109, 0, 0);</string>
+        <string>setGroupPassability(126, 106, 126, 108, 0, 0);</string>
+        <string>setGroupPassability(127, 106, 129, 106, 0, 0);</string>
+        <string>dlgFinish();</string>
+        <string>dlgFadeToThisPart();</string>
+        <string>dlgTeleportTo(126, 112, 0, N);</string>
+        <string>sayPhrase(2002, "Good day, &lt;charname&gt;. Please tell me if you need anything.");</string>
+        <string>aod.vignette_mercenary_MG = true;</string>
+        <string>setRtsCam();</string>
+        <string>tbd_mg_door_05.lock();</string>
+        <string>tbd_mg_door_06.lock();</string>
+        <string>dlgCam(25, 45, 10, 2002);</string>
+      </onLoadScripts>
+      <answers />
+      <UID>50</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>It's going to be dark soon. You should head to the inn.</npc_text>
+      <onLoadScripts>
+        <string>dlgSetZoom(10);</string>
+        <string>$RTSCamera.setYZAngle(45);</string>
+        <string>$RTSCamera.setXYAngle(0);</string>
+        <string>dlgTeleportTo(124, 111, 0, S);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Go right away.</text>
+          <def_link>2</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick>
+            <string>setGroupPassability(126, 109, 130, 109, 0, 1);</string>
+            <string>setGroupPassability(126, 106, 126, 108, 0, 1);</string>
+            <string>setGroupPassability(127, 106, 129, 106, 0, 1);</string>
+          </scriptsOnClick>
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>Not yet.</text>
+          <def_link>52</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>51</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>END - dialogue</npc_text>
+      <onLoadScripts>
+        <string>dlgFinish();</string>
+        <string>setRtsCam();</string>
+        <string>dlgFadeShortToThisPart();</string>
+      </onLoadScripts>
+      <answers />
+      <UID>52</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>The trader looks at you critically, frowning at the dents in your armor. "Keep unwanted visitors out of my room," he says before turning away.</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeToThisPart();</string>
+        <string>dlgTeleportTo(181, 96, 1, S);</string>
+        <string>useCameraBookmark(vignette_room_02);</string>
+        <string>aod.vignette_mercenary_MG = false;</string>
+        <string>tbd_mg_door_06.unlock();</string>
+        <string>tbd_mg_door_05.unlock();</string>
+        <string>aod.jnl_vignette_merc = 2;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"You will not be disturbed, master." Stand guard.</text>
+          <def_link>8</def_link>
+          <checkOnAppear />
+          <checksOnClick>
+            <string>aod.per &gt;= 6</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>5</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>2</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>[perception success]You're awakened in the middle of the night by a soft click coming from the lock. The door opens and a shadowy figure slips inside the room. Determined to earn your pay, you put on a show, lunging at the intruder and making enough noise to wake up the trader. When you're satisfied with your efforts, you throw the unfortunate thief out of the room and turn to the trader.
+
+"Who was that?" asks the trader, looking visibly shaken.</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeToThisPart();</string>
+        <string>dlgTeleportTo(6, 249, 0, S);</string>
+        <string>aod.vignette_mercenary_chestComplete = true;</string>
+        <string>useCameraBookmark(vignette_room_04);</string>
+        <string>dlgTeleportTo(6, 247, 0, N, 1170);</string>
+        <string>dlgAddItem(2003, 1, 1170);</string>
+        <string>dlgAddItem(2004, 2, 1170);</string>
+        <string>dlgAddItem(1300, 1, 1170);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"I don't know."</text>
+          <def_link>6</def_link>
+          <checkOnAppear>aod.streetwise &lt; 2</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>[streetwise success]"An assassin, master. He almost had me, but I couldn't give up, knowing that your life was in peril."</text>
+          <def_link>7</def_link>
+          <checkOnAppear>aod.streetwise &gt;= 2</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>5</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>"Alright, let's not panic." Looks like the trader is speaking to himself.</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>Wait.</text>
+          <def_link>10</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>6</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>"I owe you my life!" exclaims the trader, appearing greatly relieved. "If you're ever in Maadoran, talk to Kemnebi and tell him I sent you. He is careful and doesn't hire anyone without a recommendation from someone he trusts.
+
+"He'll take care of you, &lt;charname&gt;."</npc_text>
+      <onLoadScripts>
+        <string>aod.npc_kemnebi_sentByGracius = true;</string>
+        <string>rwd_civil(vignetteMercenary_01);</string>
+        <string>aod.jnl_kemnebi_phase1a = true;</string>
+        <string>addQuest(Kemnebi);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Thank you, master."</text>
+          <def_link>10</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>7</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>You're awakened in the middle of the night by some noise. You see a man tinkering with the merchant's chest. The intruder notices that you're awake and slowly steps back to the window, before disappearing into the night.</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeToThisPart();</string>
+        <string>dlgTeleportTo(6, 249, 0, S);</string>
+        <string>useCameraBookmark(vignette_room_04);</string>
+        <string>dlgTeleportTo(6, 247, 0, N, 1170);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Wake up, master! Somebody tried to rob you!"</text>
+          <def_link>9</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>8</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>"Tried?!" shouts the trader, after checking the chest's contents. "You imbecile! Didn't I tell you to keep people out of my room? Of all the dumb, mouth-breathing, slack-jawed guards, the gods have sent me the dumbest. I'm truly cursed..."</npc_text>
+      <onLoadScripts>
+        <string>aod.vignette_mercenary_chestEmpty = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Wait for him to calm down.</text>
+          <def_link>10</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>9</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Gracius</speaker_name>
+      <npc_text>A shadowy figure slips into the room through the open window and, without wasting any time, raises a loaded crossbow, pointing it at the trader.</npc_text>
+      <onLoadScripts>
+        <string>dlgCreateCharacter("Assassin", 1200, 1200, 5, 245, 0, N);</string>
+        <string>dlgEquipItem(161, 0, 1200);</string>
+        <string>dlgRotateToChar(1200, 1170);</string>
+        <string>dlgRotateToChar(1170, 1200);</string>
+        <string>assignCombatScheme(lowtrained, 1200);</string>
+        <string>dlgSetAnimation(anim_dodge_back, 0.1);</string>
+        <string>dlgSetAnimation(anim_regular_xbow2h, 0.5, 1200);</string>
+        <string>dlgFadeShortToThisPart();</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Continue.</text>
+          <def_link>20</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>10</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Assassin</speaker_name>
+      <npc_text>"Gracius," says the assassin calmly, "the Commercium wishes to remind you that you're *still* not welcome in this town." He pulls the trigger before he finishes talking, and Gracius falls down with a bolt in his chest.</npc_text>
+      <onLoadScripts>
+        <string>dlgKillCharacter(1170);</string>
+        <string>dlgSetAnimation(anim_death_back04, 0.95, 1170);</string>
+        <string>dlgSetCombatAnimation();</string>
+        <string>dlgFadeShortToThisPart();</string>
+        <string>sfxPlayOnce(AudioCsRangedBody01);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Attack.</text>
+          <def_link>12</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>Wait.</text>
+          <def_link>11</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>20</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Assassin</speaker_name>
+      <npc_text>"I was paid to kill one," says the assassin matter-of-factly, as if explaining things that should be obvious. "Since I don't work for free, you can relax and put your weapon down. You will walk away with your life, and my business here will be done."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>Attack.</text>
+          <def_link>12</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>Lower your weapon and let the assassin walk.</text>
+          <def_link>13</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>11</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>FIGHT - assassin</npc_text>
+      <onLoadScripts>
+        <string>aod.vignette_merc_innkeeper = true;</string>
+        <string>aod.vignette_mercenary_killedAssassin = true;</string>
+        <string>dlgSetAttitude(1200, 1, -10);</string>
+        <string>setRtsCam();</string>
+        <string>aod.gameplay_vignetteAssassin_fight = true;</string>
+        <string>aod.fight_vignette_mercenary = true;</string>
+        <string>schedule(50, 0, centerCamera, 345, 40, 14);</string>
+        <string>dlgFadeShortToThisPart();</string>
+        <string>PG_HelpText_02.setVisible(true);</string>
+        <string>schedule(100, 0, dlgStartCombat);</string>
+      </onLoadScripts>
+      <answers />
+      <UID>12</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>END - let assassin go</npc_text>
+      <onLoadScripts>
+        <string>dlgDeleteCharacter(1200);</string>
+        <string>dlgFadeToThisPart();</string>
+        <string>aod.vignette_merc_innkeeper = true;</string>
+        <string>dlgFinish();</string>
+        <string>setRtsCam();</string>
+        <string>dlgSetZoom(10);</string>
+      </onLoadScripts>
+      <answers />
+      <UID>13</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>There's nothing left to do but wait for the innkeeper to sort this mess out.</npc_text>
+      <onLoadScripts>
+        <string>useCameraBookmark(vignette_room_cam_06);</string>
+        <string>dlgTeleportTo(5, 249, 0, N);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Continue.</text>
+          <def_link>32</def_link>
+          <checkOnAppear />
+          <checksOnClick>
+            <string>aod.per &gt;= 7</string>
+          </checksOnClick>
+          <linksOnClick>
+            <int>48</int>
+          </linksOnClick>
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>Look around some more.</text>
+          <def_link>24</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>33</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>You notice that the trader is clutching some parchment in his hand. You take it, mostly out of curiosity. It's an old map. Might fetch you a couple of imperials.</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeShortToThisPart();</string>
+        <string>dlgAddItem(2100, 1);</string>
+        <string>dlgTeleportTo(6, 247, 0, NE);</string>
+        <string>aod.vignette_mercenary_mapTaken = true;</string>
+        <string>useCameraBookmark(vignette_room_05);</string>
+        <string>addQuest(Map);</string>
+        <string>aod.quest_map_phase1 = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Wait for the innkeeper.</text>
+          <def_link>14</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>32</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>[perception success]You notice that the trader is clutching some parchment in his hand, as if he had hoped that it would shield him from harm. It looks like an old map. Might fetch you a couple of imperials. When you take it, you notice a small grey sphere lying on the floor nearby. You pick it up and carefully examine it. It's an unusual metal sphere with several grooves running around it. Perhaps a loremaster might be of service.</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeShortToThisPart();</string>
+        <string>dlgAddItem(2100, 1);</string>
+        <string>dlgTeleportTo(6, 247, 0, NE);</string>
+        <string>aod.vignette_mercenary_mapTaken = true;</string>
+        <string>useCameraBookmark(vignette_room_05);</string>
+        <string>dlgAddItem(2110, 1);</string>
+        <string>addQuest(Map);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Wait for the innkeeper.</text>
+          <def_link>14</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>48</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>"Fuck," says the innkeeper, looking at the dead trader thoughtfully. "Well, I suppose we all knew it was coming, although it would have been nice if he was killed elsewhere. How do you expect me to run a business?" He sighs.
+
+"His goods are still in the storage," continues the innkeeper in a different tone. "We can sell them to the Commercium for nothing or we can actually make a few coins. What do you think, &lt;charname&gt;?"</npc_text>
+      <onLoadScripts>
+        <string>VCO_vignette_01.setActive(0);</string>
+        <string>VCO_vignette_02.setActive(0);</string>
+        <string>dlgCreateCharacter("Guard", 1195, 1195, 5, 249, 0, S);</string>
+        <string>dlgCreateCharacter("Guard", 1196, 1196, 7, 249, 0, S);</string>
+        <string>dlgTeleportTo(6, 248, 0, S, 1180);</string>
+        <string>dlgFadeToThisPart();</string>
+        <string>aod.vignette_merc_innkeeper = false;</string>
+        <string>dlgTeleportTo(6, 247, 0, N);</string>
+        <string>dlgSetAmbientAnimation();</string>
+        <string>dlgShowWeapons();</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Wouldn't say no to a few coins."</text>
+          <def_link>15</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>14</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>"Alright, then take the goods to Cado. Vardanis will handle the negotiations, so all you gotta do is watch his back and show that we mean business. The easiest money you'll ever make."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"Alright, let's go." Take the goods to Cado.</text>
+          <def_link>21</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"Next time." Go rest till the morning.</text>
+          <def_link>26</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>15</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>The Forty Thieves guild is a large and seemingly indefatigable network of thieves, smugglers, and other criminally inclined citizens. The guild operates in every town and traces its origin to the early days of the Empire. It is said that in the past, the forty kingpins of the forty largest towns used to coordinate the network. Opinion is divided as to the relations and ties of the Forty Thieves of yore and its current incarnation, but the name persists.
+
+In Teron, the guild operates out of a local tavern – a popular destination for people who feel at home in shady parts of town and dark alleys. The tavern is full of people laughing, arguing, and drinking. At the back of the tavern, piles of loot sit atop tables, waiting to be counted and divvied. At the far end of the room, Cado conducts his business while keeping an eye on the guests.</npc_text>
+      <onLoadScripts>
+        <string>aod.exploration_location_TeronTG = true;</string>
+        <string>dlgTeleportTo(138, 61, 0, S);</string>
+        <string>dlgCreateCharacter("Vardanis", 1185, 1185, 137, 61, 0, S);</string>
+        <string>aod.vignette_merc_cado = true;</string>
+        <string>useCameraBookmark(location_tavern_cam_01);</string>
+        <string>schedule(500, 0, TeronNightTime);</string>
+        <string>dlgFadeLongToThisPart();</string>
+        <string>aod.jnl_vignette_merc = 3;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Wait.</text>
+          <def_link>22</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>21</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Cado</portrait>
+      <speaker_name>Cado</speaker_name>
+      <npc_text>"Ah, Vardanis, my friend, how are you?" Cado is all smiles. "Who's your friend? Don't tell me you feel you have to bring some muscle with you. I'm hurt." Cado checks the goods, pays without haggling, and just like that, the deal is done.
+
+"Let's head back," says Vardanis, looking relieved.</npc_text>
+      <onLoadScripts>
+        <string>useCameraBookmark(NPC_Cado_Cam_01);</string>
+        <string>dlgFadeShortToThisPart();</string>
+        <string>dlgTeleportTo(139, 54, 0, S, 1185);</string>
+        <string>dlgTeleportTo(138, 54, 0, SE);</string>
+        <string>addJournalChar(cado);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Return to the inn.</text>
+          <def_link>23</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>22</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Thug</speaker_name>
+      <npc_text>The thugs come out of nowhere. You follow Vardanis, who grows more confident with each step, talking business and making big plans, when two men step out from the shadows. They look at Vardanis and smile as if he were their long lost kin.
+
+"Spare a coin?" one thug asks, pulling out a knife and smirking at his joke.</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeToThisPart();</string>
+        <string>dlgCreateCharacter("Thug", 1295, 1295, 67, 175, 0, W);</string>
+        <string>dlgCreateCharacter("Thug", 1296, 1296, 67, 173, 0, N);</string>
+        <string>dlgTeleportTo(66, 175, 0, E, 1185);</string>
+        <string>dlgTeleportTo(66, 177, 0, SE);</string>
+        <string>dlgRotateToChar(1295);</string>
+        <string>dlgRotateToChar(1185, 1296);</string>
+        <string>addParty(vignetteThugs, 0);</string>
+        <string>addCharToParty(1295, vignetteThugs, fighter);</string>
+        <string>addCharToParty(1296, vignetteThugs, fighter);</string>
+        <string>addParty(VardanisVignette, 0);</string>
+        <string>addCharToParty(1185, VardanisVignette, fighter);</string>
+        <string>addCharToParty(1, VardanisVignette, fighter);</string>
+        <string>useCameraBookmark(vignette_thug_ambush_01);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Take out your weapon.</text>
+          <def_link>46</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>23</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Thug</speaker_name>
+      <npc_text>"Don't be so eager to die for nothing, friend," says the thug. "You see, Vard an' me go way back. We have a lot of catching up to do, don't we? So, here," he throws you a gold coin, "take the rest of the night off."</npc_text>
+      <onLoadScripts>
+        <string>dlgChangeMoney(1);</string>
+        <string>dlgSetCombatAnimation();</string>
+        <string>dlgRotateToChar(1, 1295);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Fight.</text>
+          <def_link>25</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>Walk away. Might be the smart thing to do.</text>
+          <def_link>47</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>46</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>FIGHT - 2 thugs</npc_text>
+      <onLoadScripts>
+        <string>dlgFinish();</string>
+        <string>setRtsCam();</string>
+        <string>setCombatPerTargetPriority(1295, 1, 150);</string>
+        <string>addEnemyParty(VardanisVignette, vignetteThugs);</string>
+        <string>addEnemyParty(VignetteThugs, VardanisVignette);</string>
+        <string>dlgCam(45, 45, 10, 1295);</string>
+        <string>aod.vignette_mercenary_fightThugs = true;</string>
+        <string>aod.gameplay_vardanis_fight = true;</string>
+        <string>dlgEquipItem(102, 0, 1185);</string>
+        <string>dlgFadeShortToThisPart();</string>
+        <string>schedule(100, 0, dlgStartCombat);</string>
+      </onLoadScripts>
+      <answers />
+      <UID>25</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Innkeeper</speaker_name>
+      <npc_text>"What can I do for you, &lt;charname&gt;?"</npc_text>
+      <onLoadScripts>
+        <string>dlgteleportto(188, 98, 0, N);</string>
+        <string>dlgteleportto(188, 100, 0, S, 1180);</string>
+        <string>dlgFadeToThisPart();</string>
+        <string>useCameraBookmark(NPC_innkeeper_cam_01);</string>
+        <string>rwd_quest(vignetteMercenary);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Got any jobs for me?"</text>
+          <def_link>27</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>26</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Innkeeper</speaker_name>
+      <npc_text>"Seeing that the last paying customer you were supposed to protect ended up dead, no, not really, &lt;charname&gt;. The Imperial Guards are recruiting though. Might be just the place for you."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"Might be. Do you know a good loremaster?"</text>
+          <def_link>16</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>27</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Innkeeper</speaker_name>
+      <npc_text>"Talk to Feng."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>Go pay Feng a visit.</text>
+          <def_link>42</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>Go to the Imperial Guards fort.</text>
+          <def_link>28</def_link>
+          <checkOnAppear>aod.pc_member_none</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>Leave.</text>
+          <def_link>45</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>16</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Innkeeper</speaker_name>
+      <npc_text>"Talk to Feng."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>Rest and go pay Feng a visit.</text>
+          <def_link>42</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>Rest and go to the Imperial Guards fort.</text>
+          <def_link>28</def_link>
+          <checkOnAppear>aod.pc_member_none</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>Rest for the night.</text>
+          <def_link>45</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>43</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>END</npc_text>
+      <onLoadScripts>
+        <string>dlgFinish();</string>
+        <string>setRtsCam();</string>
+        <string>dlgFadeShortToThisPart();</string>
+        <string>dlgCam(75, 45, 10, 1);</string>
+      </onLoadScripts>
+      <answers />
+      <UID>24</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>END - vignette</npc_text>
+      <onLoadScripts>
+        <string>dlgFinish();</string>
+        <string>setRtsCam();</string>
+        <string>tbd_inn_door_01.open();</string>
+        <string>dlgTeleportTo(186, 90, 0, S);</string>
+        <string>TeronDayTime();</string>
+        <string>dlgFadeToThisPart();</string>
+        <string>dlgCureStat(all);</string>
+        <string>cheatHP();</string>
+        <string>aod.global_teron_vignette = false;</string>
+        <string>setAchievement("ACH_MERCENARY");</string>
+        <string>remQuest(VignetteMercenary);</string>
+      </onLoadScripts>
+      <answers />
+      <UID>45</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>END - go to IG</npc_text>
+      <onLoadScripts>
+        <string>dlgFinish();</string>
+        <string>dlgFadeToThisPart();</string>
+        <string>setRtsCam();</string>
+        <string>dlgTeleportTo(204, 56, 0, E);</string>
+        <string>TeronDayTime();</string>
+        <string>dlgCureStat(all);</string>
+        <string>cheatHP();</string>
+        <string>aod.global_teron_vignette = false;</string>
+        <string>setAchievement("ACH_MERCENARY");</string>
+        <string>remQuest(VignetteMercenary);</string>
+      </onLoadScripts>
+      <answers />
+      <UID>28</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>END - go to Feng</npc_text>
+      <onLoadScripts>
+        <string>dlgFinish();</string>
+        <string>dlgFadeToThisPart();</string>
+        <string>setRtsCam();</string>
+        <string>dlgTeleportTo(159, 72, 0, N);</string>
+        <string>TeronDayTime();</string>
+        <string>dlgCureStat(all);</string>
+        <string>cheatHP();</string>
+        <string>aod.global_teron_vignette = false;</string>
+        <string>setAchievement("ACH_MERCENARY");</string>
+        <string>remQuest(VignetteMercenary);</string>
+      </onLoadScripts>
+      <answers />
+      <UID>42</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Innkeeper</speaker_name>
+      <npc_text>"Where is Vardanis? Where is the money?"</npc_text>
+      <onLoadScripts>
+        <string>dlgteleportto(188, 98, 0, N);</string>
+        <string>dlgteleportto(188, 100, 0, S, 1180);</string>
+        <string>dlgFadeToThisPart();</string>
+        <string>useCameraBookmark(NPC_innkeeper_cam_01);</string>
+        <string>dlgSetAmbientAnimation();</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Dead. As is often the case when one's chasing 'easy money'."</text>
+          <def_link>30</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>29</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Innkeeper</speaker_name>
+      <npc_text>"Where is Vardanis? Where is the money?"</npc_text>
+      <onLoadScripts>
+        <string>dlgteleportto(188, 98, 0, N);</string>
+        <string>dlgteleportto(188, 100, 0, S, 1180);</string>
+        <string>dlgFadeToThisPart();</string>
+        <string>useCameraBookmark(NPC_innkeeper_cam_01);</string>
+        <string>dlgSetAmbientAnimation();</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Dead, I assume. As is often the case when one's chasing 'easy money'."</text>
+          <def_link>30</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>47</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Innkeeper</speaker_name>
+      <npc_text>"Fuck," says the innkeeper, mirroring his earlier sentiment. "Oh well, at least we tried, eh?"</npc_text>
+      <onLoadScripts>
+        <string>rwd_quest(vignetteMercenary);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"Yeah. We tried. Got any jobs for me?"</text>
+          <def_link>31</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>30</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name>Innkeeper</speaker_name>
+      <npc_text>"Seeing that the last two men you were supposed to protect ended up dead, no, not really, &lt;charname&gt;. The Imperial Guards are recruiting though. Might be just the place for you."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"Might be. Do you know a good loremaster?"</text>
+          <def_link>43</def_link>
+          <checkOnAppear>aod.pc_member_none</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>"I'm working for Cado now. Might be a conflict of interests. Do you know a good loremaster?"</text>
+          <def_link>43</def_link>
+          <checkOnAppear>aod.pc_member_thieves</checkOnAppear>
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>31</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>It's a busy night, but you've seen worse. Dying for nothing is easy these days, it's staying alive that's the tricky part.</npc_text>
+      <onLoadScripts>
+        <string>dlgTeleportTo(73, 175, 0, W);</string>
+        <string>useCameraBookmark(vignette_thug_ambush_02);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Go to the inn and get some rest.</text>
+          <def_link>29</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>The night's still young. Go back to the tavern and have a drink with Cado.</text>
+          <def_link>35</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>Look around some more.</text>
+          <def_link>24</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>34</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Cado</portrait>
+      <speaker_name>Cado</speaker_name>
+      <npc_text>You go back. The apes posted outside get out of your way and let you in. As if on cue, conversations and drunken laughter stop and dead silence fills the tavern. You make your way to the bar and pour yourself some wine.
+
+"&lt;charname&gt;, is it?" asks Cado. "I didn't expect to see you again tonight. To be honest, I didn't expect to see you again at all, yet here you are."</npc_text>
+      <onLoadScripts>
+        <string>dlgFadeToThisPart();</string>
+        <string>useCameraBookmark(NPC_Cado_Cam_01);</string>
+        <string>dlgTeleportTo(139, 54, 0, S);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>"I'm looking for a job. It occurred to me that you have two job openings."</text>
+          <def_link>36</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>35</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Cado</portrait>
+      <speaker_name>Cado</speaker_name>
+      <npc_text>"Looks like it, since you're here. What I want to know is *why* you are here, &lt;charname&gt;. Why would a wounded mercenary with a bag full of money risk &lt;his/her&gt; life to seek employment in a guild such as ours?"</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"You need better men, I need better masters."</text>
+          <def_link>37</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>36</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Cado</portrait>
+      <speaker_name>Cado</speaker_name>
+      <npc_text>"I do need better men, that's for sure. Very well, you've got the job. Now, give me the money you took from Vardanis."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>"Why?"</text>
+          <def_link>38</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>37</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Cado</portrait>
+      <speaker_name>Cado</speaker_name>
+      <npc_text>"Because you've just replaced two men who were told to cut Vardanis' lying throat from one ear to the other and retrieve the money. And since you're new to the guild, let me explain how things work.
+
+"The guild looks after you, protects you, and enables you and many others to make a fucking living. This costs money. The guild maintains a vast network of people who pass information, warn when there is trouble, and often look the other way. This too costs money. Shipping what we take to other towns, where it won't raise any suspicions and get flagged as stolen, costs money. Are you getting the picture now?
+
+"The guild gives you jobs, you do them well and get your cut of the action. This is how we operate. You don't like it? Find something else to do."</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>Give him the money.</text>
+          <def_link>39</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>38</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait>Cado</portrait>
+      <speaker_name>Cado</speaker_name>
+      <npc_text>Cado checks the money, nods, and gives you your share. "Excellent work, &lt;charname&gt;. Now, your next task might be a bit out of your comfort zone, but you work for me now - you've got to be able to put a few words together.
+
+"We have an ore shipment that must disappear. The sooner, the better. Too many questions are being asked by people I've never seen before. I've made the arrangements with our friends in Maadoran. Make sure that the guards at the gate will look the other way.
+
+"Go rest first though, you do look like you need it."</npc_text>
+      <onLoadScripts>
+        <string>PCmemberThieves();</string>
+        <string>dlgChangeMoney(-125);</string>
+        <string>aod.pc_member_none = false;</string>
+        <string>aod.quest_tg1_talkToGuards = true;</string>
+        <string>assignDialogue(quest_tg1_01, 1891);</string>
+        <string>assignDialogue(quest_tg1_01, 1890);</string>
+        <string>aod.quest_Tg1_phase2 = true;</string>
+        <string>addQuest(TG1);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>Go rest at the inn.</text>
+          <def_link>29</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>39</UID>
+    </dlgPart>
+  </parts>
+</dlgData>

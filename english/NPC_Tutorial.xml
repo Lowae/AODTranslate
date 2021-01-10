@@ -1,0 +1,274 @@
+﻿<?xml version="1.0"?>
+<dlgData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <header>
+    <conditions>
+      <string>aod.npc_tutorial_met</string>
+    </conditions>
+    <links>
+      <int>5616</int>
+    </links>
+    <dlg_name>NPC_Tutorial</dlg_name>
+    <def_link>5606</def_link>
+    <def_speaker_name>Centurion</def_speaker_name>
+    <def_portrait>None</def_portrait>
+  </header>
+  <parts>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>“So, I hear you want to be a hero? It’s a tough gig these days, son, so you’d best adjust your expectations. Now, we’ve all heard tales of faraway lands where a hero can kill hundreds of men and all kind of beasts in the blink of an eye, but here if you go against three thugs and live to tell the tale, you should consider yourself lucky.
+
+“Respect your enemy, son, and take each and every one seriously. They want to live, just the same as you do, and they’ll fight you tooth and nail for it. Still, every man has to fight for what’s his sometime, so let’s get to training.”</npc_text>
+      <onLoadScripts>
+        <string>aod.npc_tutorial_met = true;</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>“Tell me more!”</text>
+          <def_link>5608</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>“I got it. Step aside, grandpa.”</text>
+          <def_link>5607</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>5606</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>END</npc_text>
+      <onLoadScripts>
+        <string>dlgFinish();</string>
+        <string>dlgTeleportToMarker(TM_Centurion_NPC, 300);</string>
+        <string>dlgCam(300, 45, 10, 1);</string>
+        <string>dlgFadeToThisPart();</string>
+        <string>startTutorial(1);</string>
+      </onLoadScripts>
+      <answers />
+      <UID>5607</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>START NEW GAME</npc_text>
+      <onLoadScripts>
+        <string>dlgFinish();</string>
+        <string>dlgFadeShortToThisPart();</string>
+        <string>StartNewGame();</string>
+      </onLoadScripts>
+      <answers />
+      <UID>5618</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>“Rule number one – if you can’t hit a man, you can’t kill him. Sounds obvious, but you’d be surprised at how many people neglect their weapon training and rely on blind luck instead.
+
+“Rule number two – if you can’t kill a man fast enough, you’re giving him an opportunity to do you in, especially if he brought friends to the fight. Different swords, for example, are good for different occasions. Two-handers can work miracles in some situations, but be nothing but a hindrance in others. Adapt or die.
+
+“Rule number three – defense. Dodging and blocking are your first line of defense. Of course, in the heat of battle, you don’t have time to do both, so pick one and stick with it. Your armor is your second line of defense, but keep in mind that it can also slow you down. Pick one that’s right for you.”</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>“What’s the best way to survive a fight?”</text>
+          <def_link>5609</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>“Tell me about different attack types.”</text>
+          <def_link>5611</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>“I got it. Step aside, grandpa.”</text>
+          <def_link>5607</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>5608</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>“The best way to survive a fight is to avoid it entirely. Works every time.”</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>“It’s not the warrior’s way!”</text>
+          <def_link>5610</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>5609</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>“It’s not. It’s the staying alive way. So, if you’re eager to die, be sure to jump at every opportunity to fight. If you’d rather stick around for a while, pick your battles.”</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>“Tell me about different attack types.”</text>
+          <def_link>5611</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>“I got it. Step aside, grandpa.”</text>
+          <def_link>5607</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>5610</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>“You know how to swing a sword, right? Well, that’s your normal attack. A good combination of speed and damage. Now, say, you’re having a hard time hitting your opponent. Switch to faster attacks – you won’t do as much damage, but you’ll hit more often. If, however, your opponent is heavily armored, he’s easy to hit but hard to get to. Switch to slower, yet more powerful attacks. They’re easier to dodge or block, but they pack quite a punch and will get the job done.”</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>“What about aimed attacks?”</text>
+          <def_link>5612</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>5611</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>“Aimed attacks are for tricky fighters. They take more skill. I mean, if you’re aiming to open someone’s artery, it takes a precision strike. Not the same as aiming in their general direction. The benefits are well worth it though. It goes without saying that a fight will become much easier when your opponent is knocked out cold. Your kinda odds, right?
+
+“Nick his weapon arm and he won’t be able to hit you as well as he did a moment ago. Slash his thigh and he’ll be limping for a while. As you can see, there’s quite a lot that you can do when fighting. It may seem overwhelming at first, but don’t worry. It will come to you.”</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>“What about special attacks?”</text>
+          <def_link>5613</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>5612</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>“It’s always good to have options. Being able to strike twice or three times in rapid succession, knock your opponent down, or hit several opponents at once, they all have their uses.”</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>“What about critical strikes? You know, hitting where it really hurts.”</text>
+          <def_link>5614</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>5613</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>“You’ll have to split your time between weapon practice and learning anatomy, which might weaken you as a fighter. Same goes for studying alchemy or forging your own weapons. It’s a question of balance, skill, and knowledge. I’ve seen some bold fighters who ignored defense and focused on weapon training and the art of dispatching their opponents’ quickly, but it’s a risky style. I wouldn’t recommend it for the beginners.”</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>“Anything else?”</text>
+          <def_link>5615</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>5614</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>“Well, there are nets, bolas, all kinds of alchemical concoctions, including liquid fire and black powder bombs. I’m sure you’ll have plenty of time to experiment.”</npc_text>
+      <onLoadScripts />
+      <answers>
+        <dlgAnsw>
+          <text>“I got it. Step aside, grandpa.”</text>
+          <def_link>5607</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>5615</UID>
+    </dlgPart>
+    <dlgPart>
+      <portrait />
+      <speaker_name />
+      <npc_text>“Ready for the real thing?”</npc_text>
+      <onLoadScripts>
+        <string>dlgTeleportToMarker(TM_Centurion_PC);</string>
+        <string>dlgcam(290,40,8, 300);</string>
+      </onLoadScripts>
+      <answers>
+        <dlgAnsw>
+          <text>“Not yet. Tell me about different attack types again.”</text>
+          <def_link>5611</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>“Not yet.” Leave.</text>
+          <def_link>5607</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+        <dlgAnsw>
+          <text>“I was born ready.” Start New Game.</text>
+          <def_link>5618</def_link>
+          <checkOnAppear />
+          <checksOnClick />
+          <linksOnClick />
+          <scriptsOnClick />
+        </dlgAnsw>
+      </answers>
+      <UID>5616</UID>
+    </dlgPart>
+  </parts>
+</dlgData>
